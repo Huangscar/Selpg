@@ -43,8 +43,8 @@ func main() {
 		sa.page_type = "l"
 	}
 
-	if flag.NArg() == 2 {
-		sa.in_filename = flag.Arg(1)
+	if flag.NArg() == 1 {
+		sa.in_filename = flag.Arg(0)
 		//fmt.Printf("%s", sa.in_filename)
 	} else {
 		sa.in_filename = ""
@@ -66,7 +66,7 @@ func handle_args(sa selpgArgs, notFlagNum int) {
 		usage()
 		os.Exit(1)
 	}
-	if notFlagNum != 2 && notFlagNum != 1 {
+	if notFlagNum != 1 && notFlagNum != 0 {
 		//fmt.Printf("%d\n", notFlagNum)
 		//fmt.Printf("2")
 		usage()
@@ -74,7 +74,7 @@ func handle_args(sa selpgArgs, notFlagNum int) {
 	}
 	if sa.page_type == "f" {
 		if sa.page_len != -1 {
-			fmt.Printf("3")
+			//fmt.Printf("3")
 			usage()
 			os.Exit(1)
 		}
